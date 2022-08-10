@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/tazad09/nasa-project/issues"
   },
-  "homepage": "https://github.com/tazad09/nasa-project#readme"
+  "homepage": "https://github.com/tazad09/nasa-project#readme",
+  "dependencies": {
+    "morgan": "^1.10.0"
+  }
 }
