@@ -59,19 +59,19 @@ const AppLayout = props => {
   } = useLaunches(onSuccessSound, onAbortSound, onFailureSound);
 
   const planets = usePlanets();
-  
+
   return <div className={classes.content}>
     <Header onNav={animateFrame} />
     <Centered className={classes.centered}>
-      <Frame animate 
-        show={frameVisible} 
-        corners={4} 
+      <Frame animate
+        show={frameVisible}
+        corners={4}
         style={{visibility: frameVisible ? "visible" : "hidden"}}>
         {anim => (
           <div style={{padding: "20px"}}>
           <Switch>
             <Route exact path="/">
-              <Launch 
+              <Launch
                 entered={anim.entered}
                 planets={planets}
                 submitLaunch={submitLaunch}
