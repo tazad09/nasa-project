@@ -22,7 +22,8 @@ async function httpAddNewLaunch(req, res) {
     });
   }
 
-  launch.launchDate = new Date(launch.launchDate);
+  launch.launchDate = new Date(launch.launchDate.replace(/-/g, '\/').replace(/T.+/, ''));
+
 
   if (isNaN(launch.launchDate)) {
     return res.status(400).json({
@@ -50,6 +51,8 @@ async function httpAbortLaunch(req, res) {
     ok: true
   });
 }
+
+
 
 module.exports = {
   httpGetAllLaunches,
