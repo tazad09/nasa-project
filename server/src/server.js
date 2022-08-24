@@ -1,25 +1,19 @@
 const http = require('http');
 const mongoose = require('mongoose');
 const app = require ('./app.js')
+const {mongoConnect} = require('../src/services/mongo')
 const {loadPlanetsData} = require('./models/planets.model')
 
 
 const PORT = 8000;
 
-const MONGO_URL = 'mongodb+srv://nasa-api:WiIz1BRVqw7q24Bu@nasacluster.qynpril.mongodb.net/?retryWrites=true&w=majority'
 
 const server = http.createServer(app);
 
-mongoose.connection.once('open', () => {
-  console.log('MongoDB connection ready!')
-})
 
-mongoose.connection.on('error', (err) => {
-  console.error(err)
-})
-
+//calling loadPlanets here before we start listening to server. The reason for this is when we get request from front to get all the planets, the data may not be fully ready. We are using async because loadPlanetsData is a promise.
 async function startServer () {
-  await mongoose.connect (MONGO_URL)
+  await mongoConnect()
   await loadPlanetsData();
   server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
