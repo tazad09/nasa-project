@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/tazad09/nasa-project#readme",
   "dependencies": {
+    "mongoose": "^6.5.4",
     "morgan": "^1.10.0"
   }
 }
