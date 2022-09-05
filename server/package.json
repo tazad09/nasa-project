@@ -1,6 +1,6 @@
 {
   "name": "nasa-project-api",
-  "version": "1.0.0",
+  "version": "16.15.1",
   "description": "NASA MISSION CONTROL API",
   "main": "server.js",
   "scripts": {
