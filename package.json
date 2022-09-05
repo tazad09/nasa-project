@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "cd client/ && npm install && npm build",
     "start": "npm run build --prefix client && npm start --prefix server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "npm run watch --prefix server",
