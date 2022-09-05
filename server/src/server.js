@@ -7,7 +7,6 @@ const {loadPlanetsData} = require('./models/planets.model')
 
 const PORT = process.env.PORT || 8000;
 
-
 const server = http.createServer(app);
 
 //calling loadPlanets here before we start listening to server. The reason for this is when we get request from front to get all the planets, the data may not be fully ready. We are using async because loadPlanetsData is a promise.
